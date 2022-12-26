@@ -42,5 +42,27 @@ def deleteBook(request, pk):
     return redirect('home')
 
 
+class OrderFromBook(views.View):
+    def get(self, request, pk):
+        model_book = models.Book.objects.get(pk=pk)
+        model_order = models.OrderBook(book=model_book)
+        form = forms.OrderForm(instance=model_order)
+        return render(request, 'app/order.html', context={'form': form})
+
+
 class Order(views.View):
-    ...
+    def get(self, request):
+        form = forms.OrderForm()
+        return render(request, 'app/order.html', context={'form': form})
+    
+    def post(self, request):
+        form = forms.OrderForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/orders/')
+        return redirect('')
+
+
+def orders(request):
+    orders = models.OrderBook.objects.all()
+    return render(request, 'app/orders.html', context={'orders': orders})

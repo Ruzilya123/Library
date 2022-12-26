@@ -41,9 +41,10 @@
     <hr>
     
     <div class="edit">
-            {% for item in books %}
+        {% for item in books %}
             {{ item.name }}: <b>{{ item.category }}</b>
             <a class="a" href="/{{ item.pk }}/">edit/delete</a>
+            <a href="/order/{{ item.pk }}/">order</a>
             <hr>
         {% endfor %}
     </div>
