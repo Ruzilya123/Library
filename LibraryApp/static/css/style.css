@@ -5,21 +5,15 @@
 }
 
 .category { 
-    display: flex;
-    justify-content: center;
     padding-top: 5px;
 }
 
 .filter {
-    display: flex;
     padding-top: 5px;
-    justify-content: center;
 }
 
 .add {
-    display: flex;
     padding-top: 5px;
-    justify-content: center;
 }
 
 .edit {
