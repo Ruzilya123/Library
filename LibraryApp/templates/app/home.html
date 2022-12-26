@@ -24,17 +24,17 @@
     <div class="filter">
         <form action="" method="get">
             <p>Убрать фильтр:</p>
-            {% csrf_token %}
-            <input type="submit" value="no filter">
+            {% csrf_token %} <input class="inp" type="submit" value="no filter">
         </form>
     </div>
     
     <hr>
+
     <div class="add">
         <form method="post">
             {% csrf_token %}
             {{ book_form }}
-            <input class="but" type="submit" value="add">
+            <input class="inp" type="submit" value="add">
         </form>
     </div>
     
@@ -44,9 +44,10 @@
         {% for item in books %}
             {{ item.name }}: <b>{{ item.category }}</b>
             <a class="a" href="/{{ item.pk }}/">edit/delete</a>
-            <a href="/order/{{ item.pk }}/">order</a>
+            <a class="aw" href="/order/{{ item.pk }}/">order</a>
             <hr>
         {% endfor %}
     </div>
+
 </body>
 </html>
