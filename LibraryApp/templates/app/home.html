@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get">
+        <p>Выбрать категорию:</p>
+        {% csrf_token %}
+        {{ category_form.name }}
+        <input type="submit" value="filter">
+    </form>
+    <form action="" method="get">
+        <p>Убрать фильтр:</p>
+        {% csrf_token %}
+        <input type="submit" value="no filter">
+    </form>
+    <hr>
+    <form method="post">
+        {% csrf_token %}
+        {{ book_form }}
+        <input type="submit" value="add">
+    </form>
+    <hr>
+    {% for item in books %}
+        {{ item.name }}
+        {{ item.category }}
+        <a href="/{{ item.pk }}/">edit/delete</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>
