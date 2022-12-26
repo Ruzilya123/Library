@@ -1,36 +1,53 @@
+
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <form method="get">
-        <p>Выбрать категорию:</p>
-        {% csrf_token %}
-        {{ category_form.name }}
-        <input type="submit" value="filter">
-    </form>
-    <form action="" method="get">
-        <p>Убрать фильтр:</p>
-        {% csrf_token %}
-        <input type="submit" value="no filter">
-    </form>
+
+    <div class="category">
+        <form method="get">
+            <p>Выбрать категорию:</p>
+            {% csrf_token %}
+            {{ category_form.name }}
+            <input class="inp" type="submit" value="filter">
+        </form>
+    </div>
+
+    <div class="filter">
+        <form action="" method="get">
+            <p>Убрать фильтр:</p>
+            {% csrf_token %} <input class="inp" type="submit" value="no filter">
+        </form>
+    </div>
+    
     <hr>
-    <form method="post">
-        {% csrf_token %}
-        {{ book_form }}
-        <input type="submit" value="add">
-    </form>
+
+    <div class="add">
+        <form method="post">
+            {% csrf_token %}
+            {{ book_form }}
+            <input class="inp" type="submit" value="add">
+        </form>
+    </div>
+    
     <hr>
-    {% for item in books %}
-        {{ item.name }}
-        {{ item.category }}
-        <a href="/{{ item.pk }}/">edit/delete</a>
-        <a href="/order/{{ item.pk }}/">order</a>
-        <hr>
-    {% endfor %}
+    
+    <div class="edit">
+        {% for item in books %}
+            {{ item.name }}: <b>{{ item.category }}</b>
+            <a class="a" href="/{{ item.pk }}/">edit/delete</a>
+            <a class="aw" href="/order/{{ item.pk }}/">order</a>
+            <hr>
+        {% endfor %}
+    </div>
+
 </body>
 </html>
