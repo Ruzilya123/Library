@@ -7,10 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="/order/">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="order">
-    </form>
+    <div class="order">
+        <h2>Заказать книгу</h2>
+        <form method="post" action="/order/">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="order">
+        </form>
+    </div>
 </body>
 </html>
