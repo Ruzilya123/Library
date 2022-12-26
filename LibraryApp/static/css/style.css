@@ -1,0 +1,37 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.category { 
+    display: flex;
+    justify-content: center;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+}
+
+.edit {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.a {
+    text-decoration: none;
+    color: limegreen;
+}
+
+.inp {
+    border: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+}
