@@ -1,3 +1,18 @@
+.order {
+    background-color: #daa520;
+    width: min-content;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.orders {
+    background-color: #daa520;
+    width: 300px;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+}
 
 * {
     margin: 0;

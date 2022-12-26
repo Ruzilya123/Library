@@ -54,7 +54,7 @@ class Order(views.View):
     def get(self, request):
         form = forms.OrderForm()
         return render(request, 'app/order.html', context={'form': form})
-    
+
     def post(self, request):
         form = forms.OrderForm(request.POST)
         if form.is_valid():
