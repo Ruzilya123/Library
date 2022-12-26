@@ -21,5 +21,7 @@ urlpatterns = [
     path('', views.Home.as_view(), name='home'),
     path('<int:pk>/delete/', views.deleteBook),
     path('<int:pk>/', views.Book.as_view()),
-    path('order/', views.Order.as_view())
+    path('order/<int:pk>/', views.OrderFromBook.as_view()),
+    path('order/', views.Order.as_view()),
+    path('orders/', views.orders),
 ]

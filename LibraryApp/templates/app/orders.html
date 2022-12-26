@@ -7,10 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post" action="/order/">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="order">
-    </form>
+    {% for item in orders %}
+        {{ item.book }} {{ item.communication }} <hr>
+    {% endfor %}
 </body>
 </html>
